@@ -23,8 +23,8 @@ gem install rails
 
 #### 5. Clone the repository
 ```shell
-git clone XXXXXXX
-cd XXXX
+git clone git@github.com:Vigorousity/ds-demo-project.git
+cd ds-demo-project
 ```
 
 #### 6. Within the project's directory, run `bundle install`
