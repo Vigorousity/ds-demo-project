@@ -1,0 +1,27 @@
+<h1>List of People and Addresses</h1>
+<br/>
+<table class="table table-striped table-bordered table-hover">
+    <thead class="table-dark">
+        <tr>
+            <th>Name</th>
+            <th>Address</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <% @data.each do |row| %>
+            <tr>
+                <td><%= link_to row["name"], person_path(q: row["name"]), class: "link-dark text-decoration-none link-opacity-75-hover" %></td>
+                <td><%= link_to row["address"], location_path(q: row["address"]), class: "link-dark text-decoration-none link-opacity-75-hover" %></td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>
+
+  <ul class="pagination">
+    <li class="page-item <%= @skip <= 0 ? "disabled" : "" %>"><%= link_to "Previous", root_path(:skip => @skip - @take, :take => @take), class: "page-link" %></li>
+    <% @numPages.times do |i| %>
+        <li class="page-item <%= i == @skip / @take ? "active" : "" %>"><%= link_to i + 1, root_path(:skip => i * @take, :take => @take), class: "page-link" %></li>
+    <% end %>
+    <li class="page-item <%= @skip + @take >= @maxLength ? "disabled" : "" %>"><%= link_to "Next", root_path(:skip => @skip + @take, :take => @take), class: "page-link" %></li>
+  </ul>

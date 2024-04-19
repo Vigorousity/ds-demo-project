@@ -1,0 +1,39 @@
+<div class="container-fluid bg-light p-5 rounded">
+    <div class="container p-5">
+        <h1 class="display-6 fw-bold"><%= @query %></h1>
+        <hr class="my-4">
+
+        <form class="row g-3">
+            <div class="col-12">
+                <label class="form-label fw-bold">Marital Status</label>
+                <input type="text" class="form-control bg-white" disabled readonly value="<%= @personInfo["maritalStatus"] %>">
+            </div>
+
+            <div class="col-12 mt-5">
+                <label class="form-label fw-bold">Educational Attainment</label>
+                <input type="text" class="form-control bg-white" disabled readonly value="<%= @personInfo["education"] %>">
+            </div>
+
+            <div class="col-lg-4  mt-5">
+                <label class="form-label fw-bold">Field of Work</label>
+                <input type="text" class="form-control bg-white" disabled readonly value="<%= @personInfo["fieldOfWork"] %>">
+            </div>
+            <div class="col-lg-4  mt-5">
+                <label class="form-label fw-bold">Job Title</label>
+                <input type="text" class="form-control bg-white" disabled readonly value="<%= @personInfo["jobTitle"] %>">
+            </div>
+            <div class="col-lg-4  mt-5">
+                <label class="form-label fw-bold">Employment Type</label>
+                <input type="text" class="form-control bg-white" disabled readonly value="<%= @personInfo["employmentType"] %>">
+            </div>
+
+            <div class="col-12 mt-5">
+                <label class="form-label fw-bold">Vehicle</label>
+                <input type="text" class="form-control bg-white" disabled readonly value="<%= @personInfo["vehicle"] %>">
+            </div>
+        </form>
+
+        <br/><br/>
+        <%= button_to "Back", root_path, class: "btn btn-dark", :method => :get %>
+    </div>
+</div>

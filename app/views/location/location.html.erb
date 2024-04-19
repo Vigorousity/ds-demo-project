@@ -1,0 +1,57 @@
+<div class="container-fluid bg-light p-5 rounded">
+    <div class="container p-5">
+        <h1 class="display-6 fw-bold"><%= @query %></h1>
+        <p class="lead"><%= @locationInfo["censusBlockName"] %></p>
+        <hr class="my-4">
+
+        <form class="row g-3">
+            <div class="col-12">
+                <label class="form-label fw-bold">Total Population</label>
+                <input type="text" class="form-control bg-white" disabled readonly value="<%= @locationInfo["totalPop"] %>">
+            </div>
+
+            <div class="col-12 mt-5">
+                <label class="form-label fw-bold">Educational Attainment (25 years and over; high school graduate or higher)</label>
+                <input type="text" class="form-control bg-white" disabled readonly value="<%= @locationInfo["education"] %>%">
+            </div>
+
+            <div class="col-lg-4  mt-5">
+                <label class="form-label fw-bold">Median Income</label>
+                <input type="text" class="form-control bg-white" disabled readonly value="$<%= @locationInfo["medianIncome"] %>">
+            </div>
+            <div class="col-lg-4  mt-5">
+                <label class="form-label fw-bold">Income Below the Poverty Line</label>
+                <input type="text" class="form-control bg-white" disabled readonly value="<%= @locationInfo["incomePoverty"] %>%">
+            </div>
+            <div class="col-lg-4  mt-5">
+                <label class="form-label fw-bold">Unemployment Rate</label>
+                <input type="text" class="form-control bg-white" disabled readonly value="<%= @locationInfo["unemploymentRate"] %>%">
+            </div>
+
+            <div class="col-lg-4  mt-5">
+                <label class="form-label fw-bold">Average Household Size</label>
+                <input type="text" class="form-control bg-white" disabled readonly value="<%= @locationInfo["avgHouseholdSize"] %>">
+            </div>
+            <div class="col-lg-4  mt-5">
+                <label class="form-label fw-bold">Single Males with Children</label>
+                <input type="text" class="form-control bg-white" disabled readonly value="<%= @locationInfo["singleMaleWithChildren"] %>">
+            </div>
+            <div class="col-lg-4  mt-5">
+                <label class="form-label fw-bold">Single Females with Children</label>
+                <input type="text" class="form-control bg-white" disabled readonly value="<%= @locationInfo["singleFemaleWithChildren"] %>">
+            </div>
+
+            <div class="col-lg-6  mt-5">
+                <label class="form-label fw-bold">Spoken Language at Home not English</label>
+                <input type="text" class="form-control bg-white" disabled readonly value="<%= @locationInfo["homeLanguageNotEnglish"] %>%">
+            </div>
+            <div class="col-lg-6  mt-5">
+                <label class="form-label fw-bold">Households with an Internet Subscription</label>
+                <input type="text" class="form-control bg-white" disabled readonly value="<%= @locationInfo["internetSubscription"] %>%">
+            </div>
+        </form>
+
+        <br/><br/>
+        <%= button_to "Back", root_path, class: "btn btn-dark", :method => :get %>
+    </div>
+</div>
